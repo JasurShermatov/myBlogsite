@@ -1,0 +1,86 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Edit Post | Portfolio{% endblock %}
+
+{% block content %}
+<section class="admin-section">
+    <div class="container">
+        <h1 class="section-heading">Edit Blog Post</h1>
+        
+        <div class="admin-container">
+            <div class="admin-sidebar">
+                <h2>Admin Actions</h2>
+                <ul class="admin-links">
+                    <li><a href="{% url 'add_post' %}" class="active">Manage Posts</a></li>
+                    <li><a href="{% url 'add_portfolio' %}">Manage Portfolio</a></li>
+                </ul>
+            </div>
+            
+            <div class="admin-content">
+                <div class="admin-form-container">
+                    <h2>Edit Post: {{ post.title }}</h2>
+                    <form method="post" enctype="multipart/form-data" class="admin-form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="{{ form.title.id_for_label }}">Title</label>
+                            {{ form.title }}
+                            {% if form.title.errors %}
+                            <div class="form-error">{{ form.title.errors }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{ form.post.id_for_label }}">Content</label>
+                            {{ form.post }}
+                            {% if form.post.errors %}
+                            <div class="form-error">{{ form.post.errors }}</div>
+                            {% endif %}
+                            <small class="form-help">{{ form.post.help_text }}</small>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="{{ form.image.id_for_label }}">Image</label>
+                            {% if post.image %}
+                            <div class="current-image">
+                                <img src="{{ post.image.url }}" alt="{{ post.title }}" style="max-width: 200px;">
+                                <p>Current image</p>
+                            </div>
+                            {% endif %}
+                            {{ form.image }}
+                            {% if form.image.errors %}
+                            <div class="form-error">{{ form.image.errors }}</div>
+                            {% endif %}
+                            <small class="form-help">{{ form.image.help_text }}</small>
+                        </div>
+                        
+                        <div class="form-actions">
+                            <button type="submit" class="btn-primary">Update Post</button>
+                            <a href="{% url 'add_post' %}" class="btn-outline">Cancel</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_js %}
+<!-- If you have a rich text editor for the post content -->
+<script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
+<script>
+    tinymce.init({
+        selector: '#{{ form.post.id_for_label }}',
+        height: 400,
+        plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+        ],
+        toolbar: 'undo redo | formatselect | bold italic backcolor | \
+            alignleft aligncenter alignright alignjustify | \
+            bullist numlist outdent indent | removeformat | help'
+    });
+</script>
+{% endblock %}

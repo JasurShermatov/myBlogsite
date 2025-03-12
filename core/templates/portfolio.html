@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Portfolio | Portfolio{% endblock %}
+
+{% block content %}
+<section class="portfolio-section">
+    <div class="container">
+        <h1 class="section-heading">My Portfolio</h1>
+
+        <div class="portfolio-filter">
+            <button class="filter-btn active" data-filter="all">All</button>
+            {% for category in categories %}
+            <button class="filter-btn" data-filter="{{ category.name|slugify }}">{{ category.name }}</button>
+            {% endfor %}
+        </div>
+
+        <div class="portfolio-grid">
+            {% for portfolio in all_portfolios %}
+            <div class="portfolio-item" data-category="{{ portfolio.category.name|slugify }}">
+                {% if portfolio.image %}
+                <img src="{{ portfolio.image.url }}" alt="{{ portfolio.title }}" class="portfolio-image">
+                {% endif %}
+                <div class="portfolio-overlay">
+                    <h3>{{ portfolio.title }}</h3>
+                    <p>{{ portfolio.text }}</p>
+                    {% if portfolio.link %}
+                    <a href="{{ portfolio.link }}" class="btn-primary" target="_blank">View Project</a>
+                    {% endif %}
+                    <button class="btn-outline portfolio-modal-trigger" data-id="{{ portfolio.id }}">View Details</button>
+                </div>
+            </div>
+            {% empty %}
+            <p>No portfolio items available yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Portfolio Modal -->
+{% for portfolio in all_portfolios %}
+<div id="portfolioModal{{ portfolio.id }}" class="modal portfolio-modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="portfolio-modal-content">
+            <h2>{{ portfolio.title }}</h2>
+
+            {% if portfolio.image %}
+            <div class="portfolio-modal-image">
+                <img src="{{ portfolio.image.url }}" alt="{{ portfolio.title }}">
+            </div>
+            {% endif %}
+
+            <div class="portfolio-modal-details">
+                <h3>Description</h3>
+                <p>{{ portfolio.text }}</p>
+
+                {% if portfolio.additional_text %}
+                <h3>Additional Information</h3>
+                <p>{{ portfolio.additional_text }}</p>
+                {% endif %}
+
+                <p><strong>Category:</strong> {{ portfolio.category.name }}</p>
+
+                {% if portfolio.link %}
+                <a href="{{ portfolio.link }}" class="btn-primary" target="_blank">Visit Project</a>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/portfolio.js' %}"></script>
+{% endblock %}

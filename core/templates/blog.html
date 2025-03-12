@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Blog | Portfolio{% endblock %}
+
+{% block content %}
+<section class="blog-section">
+    <div class="container">
+        <h1 class="section-heading">Blog</h1>
+        
+        <div class="blog-grid">
+            {% for post_item in post %}
+            <div class="blog-card">
+                {% if post_item.image %}
+                <div class="blog-card-image">
+                    <img src="{{ post_item.image.url }}" alt="{{ post_item.title }}">
+                </div>
+                {% endif %}
+                <div class="blog-card-content">
+                    <h2>{{ post_item.title }}</h2>
+                    <p class="blog-date">{{ post_item.created_at|date:"F j, Y" }}</p>
+                    <div class="blog-excerpt">
+                        {{ post_item.post|truncatewords:30|safe }}
+                    </div>
+                    <button class="read-more blog-modal-trigger" data-id="{{ post_item.id }}">Read More</button>
+                </div>
+            </div>
+            {% empty %}
+            <p>No blog posts available yet.</p>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Blog Post Modal -->
+{% for post_item in post %}
+<div id="blogModal{{ post_item.id }}" class="modal blog-modal">
+    <div class="modal-content">
+        <span class="close-modal">&times;</span>
+        <div class="blog-modal-content">
+            <h2>{{ post_item.title }}</h2>
+            <p class="blog-date">{{ post_item.created_at|date:"F j, Y" }}</p>
+            
+            {% if post_item.image %}
+            <div class="blog-modal-image">
+                <img src="{{ post_item.image.url }}" alt="{{ post_item.title }}">
+            </div>
+            {% endif %}
+            
+            <div class="blog-post-content">
+                {{ post_item.post|safe }}
+            </div>
+            
+            <div class="blog-post-meta">
+                <p>Last updated: {{ post_item.updated_at|date:"F j, Y" }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/blog.js' %}"></script>
+{% endblock %}
