@@ -1,47 +1,3 @@
-{#{% extends 'base.html' %}#}
-{#{% load static %}#}
-{##}
-{#{% block title %}About Me | Portfolio{% endblock %}#}
-{##}
-{#{% block content %}#}
-{#<section class="about-section">#}
-{#    <div class="container">#}
-{#        <h1 class="section-heading">About Me</h1>#}
-{##}
-{#        {% if aboutme %}#}
-{#            {% for about in aboutme %}#}
-{#            <div class="about-content">#}
-{#                <div class="about-image">#}
-{#                    {% if about.profile_image %}#}
-{#                    <img src="{{ about.profile_image.url }}" alt="Profile Image" class="profile-image">#}
-{#                    {% else %}#}
-{#                    <div class="placeholder-image">Profile Image</div>#}
-{#                    {% endif %}#}
-{#                </div>#}
-{#                <div class="about-text">#}
-{#                    <h2>My Experience</h2>#}
-{#                    <div class="experience-content">#}
-{#                        {{ about.experience|safe }}#}
-{#                    </div>#}
-{##}
-{#                    {% if about.additional_info %}#}
-{#                    <h2>Additional Information</h2>#}
-{#                    <div class="additional-info">#}
-{#                        {{ about.additional_info|safe }}#}
-{#                    </div>#}
-{#                    {% endif %}#}
-{#                </div>#}
-{#            </div>#}
-{#            {% endfor %}#}
-{#        {% else %}#}
-{#            <p>No information available yet.</p>#}
-{#        {% endif %}#}
-{#    </div>#}
-{#</section>#}
-{#{% endblock %}#}
-
-
-
 {% extends 'base.html' %}
 {% load static %}
 
@@ -68,90 +24,6 @@
                         {{ about.experience|safe }}
                     </div>
 
-                    <!-- Skills Section -->
-                    <h2>Technical Skills</h2>
-                    <div class="skills-container">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Python</span>
-                                <span class="skill-percentage">80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%;"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Java</span>
-                                <span class="skill-percentage">60%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 60%;"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Django</span>
-                                <span class="skill-percentage">75%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 75%;"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">HTML/CSS</span>
-                                <span class="skill-percentage">70%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 70%;"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">JavaScript</span>
-                                <span class="skill-percentage">65%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 65%;"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">PostgreSQL</span>
-                                <span class="skill-percentage">70%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 70%;"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">RESTful APIs</span>
-                                <span class="skill-percentage">80%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 80%;"></div>
-                            </div>
-                        </div>
-
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span class="skill-name">Flask</span>
-                                <span class="skill-percentage">65%</span>
-                            </div>
-                            <div class="skill-bar">
-                                <div class="skill-progress" style="width: 65%;"></div>
-                            </div>
-                        </div>
-                    </div>
-
                     {% if about.additional_info %}
                     <h2>Additional Information</h2>
                     <div class="additional-info">
@@ -167,7 +39,6 @@
     </div>
 </section>
 {% endblock %}
-
 
 
 

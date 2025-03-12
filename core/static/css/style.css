@@ -311,6 +311,7 @@ p {
   border-radius: 8px;
   overflow: hidden;
   box-shadow: var(--shadow-md);
+
 }
 
 .about-preview-text,
@@ -413,7 +414,7 @@ p {
 }
 
 .filter-btn {
-  padding: 8px 16px;
+  padding: 15px 25px;
   background-color: transparent;
   border: 1px solid var(--primary-color);
   border-radius: 4px;
