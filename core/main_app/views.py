@@ -38,10 +38,14 @@ def home(request):
     return render(request, "home.html", context)
 
 
+
+
 def aboutme(request):
-    aboutme_ = AboutMe.objects.all()
+    aboutme_ = AboutMe.objects.prefetch_related('skills').all()
     context = {"aboutme": aboutme_}
-    return render(request=request, template_name="about.html", context=context)
+    return render(request, "about.html", context)
+
+
 
 
 def portfolio(request):

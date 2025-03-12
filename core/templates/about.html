@@ -11,28 +11,57 @@
         {% if aboutme %}
             {% for about in aboutme %}
             <div class="about-content">
-                <div class="about-image">
+                {% if about.profile_image or about.experience %}
+                <div class="about-main">
                     {% if about.profile_image %}
-                    <img src="{{ about.profile_image.url }}" alt="Profile Image" class="profile-image">
-                    {% else %}
-                    <div class="placeholder-image">Profile Image</div>
-                    {% endif %}
-                </div>
-                <div class="about-text">
-                    <h2>My Experience</h2>
-                    <div class="experience-content">
-                        {{ about.experience|safe }}
+                    <div class="about-image">
+                        <img src="{{ about.profile_image.url }}" alt="Profile Image" class="profile-image">
                     </div>
+                    {% endif %}
 
-                    {% if about.additional_info %}
-                    <h2>Additional Information</h2>
-                    <div class="additional-info">
-                        {{ about.additional_info|safe }}
+                    {% if about.experience %}
+                    <div class="about-text">
+                        <h2>My Experience</h2>
+                        <div class="experience-content">
+                            {{ about.experience|safe }}
+                        </div>
                     </div>
                     {% endif %}
                 </div>
+                {% endif %}
+
+                {% if about.additional_info %}
+                <div class="additional-info">
+                    <h2>Additional Information</h2>
+                    {{ about.additional_info|safe }}
+                </div>
+                {% endif %}
             </div>
             {% endfor %}
+
+            <!-- Programming Skills Section - OUTSIDE the for loop -->
+            <div class="programming-skills">
+                <h2 class="skills-heading">Programming Skills</h2>
+                <div class="skills-container">
+                    {% for about in aboutme %}
+                        {% for skill in about.skills.all %}
+                        <div class="skill-card">
+                            {% if skill.image %}
+                                <img src="{{ skill.image.url }}" alt="{{ skill.title }}" class="skill-image">
+                            {% endif %}
+                            <div class="skill-info">
+                                <h3>{{ skill.title }}</h3>
+                                <p>{{ skill.percentage }}% Complete</p>
+                                <p>Experience since {{ skill.experience_since|date:"F Y" }}</p>
+                                <div class="progress-bar-container">
+                                    <div class="progress-bar" data-value="{{ skill.percentage }}"></div>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            </div>
         {% else %}
             <p>No information available yet.</p>
         {% endif %}
@@ -40,6 +69,6 @@
 </section>
 {% endblock %}
 
-
-
-
+{% block extra_js %}
+<script src="{% static 'js/skills.js' %}"></script>
+{% endblock %}

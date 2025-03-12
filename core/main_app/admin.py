@@ -2,6 +2,17 @@ from django.contrib import admin
 from .models import AboutMe, Portfolio, Post, Contact, Category
 
 
+from django.contrib import admin
+from .models import AboutMe, ProgrammingSkill
+
+class ProgrammingSkillInline(admin.TabularInline):  # Yoki admin.StackedInline
+    model = ProgrammingSkill
+    extra = 1  # Qo‘shimcha yangi qator qo‘shadi (ixtiyoriy)
+    fields = ("title", "percentage", "experience_since", "image")
+    min_num = 0
+    max_num = 10  # Maksimum qo‘shish mumkin bo‘lgan skilllar soni
+
+
 @admin.register(AboutMe)
 class AboutMeAdmin(admin.ModelAdmin):
     list_display = ("__str__", "id")
@@ -9,6 +20,8 @@ class AboutMeAdmin(admin.ModelAdmin):
         ("Asosiy ma'lumotlar", {"fields": ("profile_image",)}),
         ("Matnlar", {"fields": ("experience", "additional_info")}),
     )
+    inlines = [ProgrammingSkillInline]  # Inline qo‘shish
+
 
 
 @admin.register(Category)

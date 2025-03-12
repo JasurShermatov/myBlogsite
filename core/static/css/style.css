@@ -937,4 +937,109 @@ p {
 
 
 
+/* Programming Skills Section */
+.programming-skills {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+}
 
+.skills-heading {
+    margin-bottom: 2rem;
+    text-align: center;
+    font-size: 2rem;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.skill-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s ease;
+}
+
+.skill-card:hover {
+    transform: translateY(-5px);
+}
+
+.skill-image {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-bottom: 1rem;
+}
+
+.skill-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.skill-info p {
+    margin-bottom: 0.5rem;
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.progress-bar-container {
+    height: 6px;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.progress-bar {
+    height: 100%;
+    background-color: #000;
+    width: 0%;
+    border-radius: 3px;
+    transition: width 1.2s ease-in-out;
+}
+
+/* Technology-specific colors */
+.skill-card[data-skill="JavaScript"] .progress-bar {
+    background-color: #f7df1e;
+}
+
+.skill-card[data-skill="React"] .progress-bar {
+    background-color: #61dafb;
+}
+
+.skill-card[data-skill="TypeScript"] .progress-bar {
+    background-color: #3178c6;
+}
+
+.skill-card[data-skill="Node.js"] .progress-bar {
+    background-color: #68a063;
+}
+
+.skill-card[data-skill="CSS/SASS"] .progress-bar {
+    background-color: #264de4;
+}
+
+.skill-card[data-skill="Tailwind CSS"] .progress-bar {
+    background-color: #38bdf8;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .skills-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+}
