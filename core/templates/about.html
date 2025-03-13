@@ -6,38 +6,63 @@
 {% block content %}
 <section class="about-section">
     <div class="container">
-        <h1 class="section-heading">About Me</h1>
+        <!-- Static About Me Section -->
+        <div class="about-preview">
+            <div class="about-preview-content">
+                <img src="{% static 'images/me.jpeg' %}" alt="Profile Image" class="profile-image">
+                <h1 class="profile-name">Jasur Shermatov</h1>
+                <h3 class="profile-title">Software Engineer</h3>
+                <p class="profile-quote">Innovative and efficient solutions for challenging problems through coding and creativity.</p>
+            </div>
+        </div>
 
-        {% if aboutme %}
-            {% for about in aboutme %}
-            <div class="about-content">
-                {% if about.profile_image or about.experience %}
-                <div class="about-main">
-                    {% if about.profile_image %}
-                    <div class="about-image">
-                        <img src="{{ about.profile_image.url }}" alt="Profile Image" class="profile-image">
+
+
+<!-- Dynamic Content - Only shows if aboutme data exists -->
+{% if aboutme and aboutme.exists %}
+    <!-- Dynamic Content -->
+    {% for about in aboutme %}
+        {% if about.profile_image or about.experience %}
+        <div class="about-content">
+            <div class="about-main">
+                {% if about.profile_image %}
+                <div  class="about-image">
+                    <img  style="border-radius: 0" src="{{ about.profile_image.url }}" alt="{{ about.name|default:'Profile Image' }}" class="profile-image">
+                </div>
+                {% endif %}
+                <div class="about-text">
+                    {% if about.experience %}
+                    <div class="experience-content">
+                        <h2>My Experience</h2>
+                        {{ about.experience|safe }}
                     </div>
                     {% endif %}
-
-                    {% if about.experience %}
-                    <div class="about-text">
-                        <h2>My Experience</h2>
-                        <div class="experience-content">
-                            {{ about.experience|safe }}
+                    {% if about.education %}
+                    <div class="education-content">
+                        <h2>Education</h2>
+                        <div class="education-card">
+                            <img src="{% if about.education_logo %}{{ about.education_logo.url }}{% else %}https://via.placeholder.com/50{% endif %}" alt="Education Logo" class="education-logo">
+                            <div class="education-details">
+                                {{ about.education|safe }}
+                                <span class="toggle-icon">▼</span>
+                            </div>
                         </div>
                     </div>
                     {% endif %}
                 </div>
-                {% endif %}
-
-                {% if about.additional_info %}
-                <div class="additional-info">
-                    <h2>Additional Information</h2>
+            </div>
+            {% if about.additional_info %}
+            <div class="additional-info">
+                <h2>Additional Information</h2>
+                <div class="additional-info-content">
                     {{ about.additional_info|safe }}
                 </div>
-                {% endif %}
             </div>
-            {% endfor %}
+            {% endif %}
+        </div>
+        {% endif %}
+    {% endfor %}
+
 
             <!-- Programming Skills Section - OUTSIDE the for loop -->
             <div class="programming-skills">

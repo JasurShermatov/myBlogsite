@@ -4,6 +4,54 @@
 {% block title %}Home | Portfolio{% endblock %}
 
 {% block content %}
+
+
+    <section class="about-preview-section">
+    <div class="container">
+        <!-- Static About Me Section -->
+        <div class="about-preview">
+            <div class="about-preview-content">
+                <img src="{% static 'images/me.jpeg' %}" alt="Profile Image" class="profile-image">
+                <h1 class="profile-name">Jasur Shermatov</h1>
+                <h3 class="profile-title">Software Engineer</h3>
+                <p class="profile-quote">Innovative and efficient solutions for challenging problems through coding and creativity.</p>
+                    <div class="icon-container">
+                    <a href="https://www.linkedin.com/in/jasur-shermatov-3507592a2/" class="icon-link" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                    </a>
+                    <a href="https://github.com/JasurShermatov" class="icon-link" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                    </a>
+                    <a href="https://t.me/shernatov_jasur" class="icon-link" aria-label="Telegram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M22 2L11 13"></path>
+                            <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+                        </svg>
+                    </a>
+                    <a href="https://www.instagram.com/jasur_0528" class="icon-link" aria-label="Instagram">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                        </svg>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+</section>
+
 <section class="hero-section">
     <div class="container">
         <div class="hero-content">
@@ -17,29 +65,6 @@
     </div>
 </section>
 
-<section class="about-preview-section">
-    <div class="container">
-        <h2 class="section-heading">About Me</h2>
-        {% if aboutme %}
-        <div class="about-preview-content">
-            <div class="about-preview-image">
-                {% if aboutme.profile_image %}
-                <img src="{{ aboutme.profile_image.url }}" alt="Profile Image" class="profile-image">
-                {% else %}
-                <div class="placeholder-image">Image</div>
-                {% endif %}
-            </div>
-            <div class="about-preview-text">
-                <h3>Experience</h3>
-                <p>{{ aboutme.experience|truncatewords:50 }}</p>
-                <a href="{% url 'about' %}" class="btn-outline">Read More</a>
-            </div>
-        </div>
-        {% else %}
-        <p>No information available yet.</p>
-        {% endif %}
-    </div>
-</section>
 
 <section class="portfolio-preview-section">
     <div class="container">

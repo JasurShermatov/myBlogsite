@@ -39,3 +39,28 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+
+document.addEventListener('DOMContentLoaded', () => {
+    const iconLinks = document.querySelectorAll('.icon-link');
+
+    iconLinks.forEach(link => {
+        link.addEventListener('mouseover', () => {
+            link.style.transform = 'scale(1.2)';
+            link.style.backgroundColor = '#000';
+            link.style.color = '#fff';
+            link.style.transition = 'all 0.3s ease';
+        });
+
+        link.addEventListener('mouseout', () => {
+            link.style.transform = 'scale(1)';
+            link.style.backgroundColor = '#f2f2f2';
+            link.style.color = '#000';
+        });
+    });
+});
+
+
+
+
+
+
