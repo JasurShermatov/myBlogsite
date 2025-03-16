@@ -2,21 +2,20 @@ from django.db import models
 from slugify import slugify
 
 
-
 class AboutMe(models.Model):
-    profile_image = models.ImageField(
-        upload_to="images/", blank=True, null=True, help_text="Profil rasmi")
+    profile_image = models.ImageField(upload_to="images/", blank=True, null=True, help_text="Profil rasmi")
     experience = models.TextField(blank=True, null=True, help_text="Tajriba yoki loyihalar haqida ma'lumot")
-    additional_info = models.TextField(blank=True, null=True, help_text="Qo‘shimcha ma'lumotlar")  # Qo‘shildi
+    additional_info = models.TextField(blank=True, null=True, help_text="Qo‘shimcha ma'lumotlar")
 
     def __str__(self):
         return f"About Me ({self.id})"
 
+
 class ProgrammingSkill(models.Model):
-    about_me = models.ForeignKey(AboutMe, on_delete=models.CASCADE, related_name='skills')
+    about_me = models.ForeignKey(AboutMe, on_delete=models.CASCADE, related_name="skills")
     title = models.CharField(max_length=100, help_text="Skill nomi (masalan, Python)")
     percentage = models.FloatField(help_text="Skill foizi (masalan, 80.0)")
-    experience_since = models.DateField(help_text="Qachondan beri tajriba (masalan, 2023-10-01)")
+    experience_since = models.DateField( help_text="Qachondan beri tajriba (masalan, 2023-10-01)")
     image = models.ImageField(upload_to="skills/", blank=True, null=True, help_text="Skill logosi yoki rasmi")
 
     def __str__(self):

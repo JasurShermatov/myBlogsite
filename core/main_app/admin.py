@@ -5,6 +5,7 @@ from .models import AboutMe, Portfolio, Post, Contact, Category
 from django.contrib import admin
 from .models import AboutMe, ProgrammingSkill
 
+
 class ProgrammingSkillInline(admin.TabularInline):  # Yoki admin.StackedInline
     model = ProgrammingSkill
     extra = 1  # Qo‘shimcha yangi qator qo‘shadi (ixtiyoriy)
@@ -21,7 +22,6 @@ class AboutMeAdmin(admin.ModelAdmin):
         ("Matnlar", {"fields": ("experience", "additional_info")}),
     )
     inlines = [ProgrammingSkillInline]  # Inline qo‘shish
-
 
 
 @admin.register(Category)

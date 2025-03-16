@@ -70,7 +70,7 @@
     <div class="container">
         <h2 class="section-heading">Featured Projects</h2>
         <div class="portfolio-preview-grid">
-            {% for portfolio in portfolios|slice:":3" %}
+            {% for portfolio in portfolios|slice:":6" %}
             <div class="portfolio-item">
                 {% if portfolio.image %}
                 <img src="{{ portfolio.image.url }}" alt="{{ portfolio.title }}" class="portfolio-image">
