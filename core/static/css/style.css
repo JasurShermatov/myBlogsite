@@ -1044,20 +1044,20 @@ p {
 }
 
 
-/* Footer Section */
+
+
 :root {
-  --background-primary: #4a4a5a;
-  --background-secondary: #333333;
-  --text-primary: #e0e0e8;
-  --text-secondary: #a0a0b0;
-  --accent-color: #4a4a5a;
-  --border-color: #3a3a4a;
+  --background-primary: #dbdbdb; /* Och kulrang fon */
+  --text-primary: #000000; /* Qora matn */
+  --text-secondary: #000000; /* Qora matn */
+  --border-color: #1d1c1c;
 }
 
-.site-footer{
-    background: #494747;
-    padding-top: 10px;
+.site-footer {
+  background: var(--background-primary);
+  padding-top: 10px;
 }
+
 .footer-container {
   background-color: var(--background-primary);
   color: var(--text-primary);
@@ -1074,53 +1074,46 @@ p {
 }
 
 .footer-section {
-  background-color: var(--background-secondary) !important;
-  border-radius: 12px;
-  padding: 25px;
-  border: 1px solid var(--border-color);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  background-color: transparent !important; /* Card ko‘rinishi olib tashlandi */
+  padding: 0;
+  border: none;
+  box-shadow: none;
+  transition: none;
 }
 
-.footer-section:hover {
-  transform: translateY(-5px);
-}
+
 
 .footer-section h3 {
   font-size: 1.2rem;
   margin-bottom: 20px;
   padding-bottom: 10px;
-  border-bottom: 2px solid var(--accent-color);
-  color: var(--text-primary);
+  border-bottom: 2px solid var(--border-color);
+  color: var(--text-primary) !important;
 }
 
-.footer-section.portfolio p {
-  line-height: 1.6;
-  color: var(--text-secondary);
-}
-
-.footer-section.quick-links ul {
-  list-style-type: none;
-  padding: 0;
+.footer-section p,
+.footer-section.quick-links ul li a {
+  color: var(--text-secondary) !important;
 }
 
 .footer-section.quick-links ul li {
+  list-style-type: none;
+  padding: 0;
+    color: black;
+}
+
+.footer-section.quick-links ul{
   margin-bottom: 10px;
 }
 
-.footer-section.quick-links ul li a {
-  color: var(--text-secondary);
+.footer-section ul li a, .footer-section p a {
   text-decoration: none;
+    color: black !important;
   transition: color 0.3s ease;
 }
 
 .footer-section.quick-links ul li a:hover {
   color: var(--text-primary);
-}
-
-.footer-section.contact p {
-  margin-bottom: 10px;
-  color: var(--text-secondary);
 }
 
 .footer-bottom {
@@ -1130,9 +1123,9 @@ p {
   color: var(--text-secondary);
 }
 
-.footer-bottom p{
-    margin-bottom: 0;
-    padding-bottom: 1rem;
+.footer-bottom p {
+  margin-bottom: 0;
+  padding-bottom: 1rem;
 }
 
 /* Responsive Adjustments */
@@ -1160,10 +1153,6 @@ p {
 @media screen and (max-width: 480px) {
   .footer-content {
     gap: 20px;
-  }
-
-  .footer-section {
-    padding: 20px;
   }
 
   .footer-section h3 {
