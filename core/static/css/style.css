@@ -740,10 +740,9 @@ p {
   height: 100%;
   background-color: var(--primary, #3498db);
   width: 0;
-  transition: width 1s ease-in-out;
+  transition: width .3s ease-in-out;
 }
 
- Responsive adjustments
 @media (max-width: 768px) {
   .about-main {
     flex-direction: column;
@@ -1044,56 +1043,135 @@ p {
   margin-top: 5px;
 }
 
-/* Footer */
-.site-footer {
-  background-color: var(--dark-gray);
-  color: var(--white);
-  padding: 60px 0 20px 0;
+
+/* Footer Section */
+:root {
+  --background-primary: #4a4a5a;
+  --background-secondary: #333333;
+  --text-primary: #e0e0e8;
+  --text-secondary: #a0a0b0;
+  --accent-color: #4a4a5a;
+  --border-color: #3a3a4a;
+}
+
+.site-footer{
+    background: #494747;
+    padding-top: 10px;
+}
+.footer-container {
+  background-color: var(--background-primary);
+  color: var(--text-primary);
+  padding: 40px 20px;
+  width: 100%;
 }
 
 .footer-content {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 40px;
-  margin-bottom: 40px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.footer-section {
+  background-color: var(--background-secondary) !important;
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.footer-section:hover {
+  transform: translateY(-5px);
 }
 
 .footer-section h3 {
   font-size: 1.2rem;
   margin-bottom: 20px;
-  position: relative;
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent-color);
+  color: var(--text-primary);
 }
 
-.footer-section h3::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -10px;
-  width: 40px;
-  height: 2px;
-  background-color: var(--white);
+.footer-section.portfolio p {
+  line-height: 1.6;
+  color: var(--text-secondary);
 }
 
-.footer-section ul li {
+.footer-section.quick-links ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.footer-section.quick-links ul li {
   margin-bottom: 10px;
 }
 
-.footer-section ul li a {
-  color: var(--mid-gray);
-  transition: var(--transition-regular);
+.footer-section.quick-links ul li a {
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: color 0.3s ease;
 }
 
-.footer-section ul li a:hover {
-  color: var(--white);
+.footer-section.quick-links ul li a:hover {
+  color: var(--text-primary);
+}
+
+.footer-section.contact p {
+  margin-bottom: 10px;
+  color: var(--text-secondary);
 }
 
 .footer-bottom {
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
-  padding-top: 20px;
   text-align: center;
-  font-size: 0.875rem;
-  color: var(--mid-gray);
+  padding-top: 20px;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
 }
+
+.footer-bottom p{
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+}
+
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-section {
+    text-align: center;
+  }
+
+  .footer-section.quick-links ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+  }
+
+  .footer-section.quick-links ul li {
+    margin: 0;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .footer-content {
+    gap: 20px;
+  }
+
+  .footer-section {
+    padding: 20px;
+  }
+
+  .footer-section h3 {
+    font-size: 1.1rem;
+  }
+}
+
+
 
 /* Admin Section */
 .admin-section {
@@ -1404,15 +1482,16 @@ p {
     background-color: #ffffff;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.06);
-    padding: 1.5rem; /* Reduced from 2rem */
+    padding: 1.5rem 2.5rem; /* Reduced from 2rem */
     display: flex;
     flex-direction: column;
     transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     border-bottom: 4px solid transparent;
     position: relative;
     overflow: hidden;
-    max-width: 4000px; /* Added max-width to prevent cards from getting too large */
-    margin: 0 auto; /* Center the card if it's smaller than the grid cell */
+    max-width: 4000px;
+    height: 400px;
+    margin: 0 auto;
 }
 
 .skill-card:before {
@@ -1478,7 +1557,7 @@ p {
 .progress-bar {
     height: 100%;
     background: linear-gradient(90deg, #3178c6, #61dafb);
-    width: 0%;
+    width: 0;
     border-radius: 4px;
     transition: width 1.5s cubic-bezier(0.19, 1, 0.22, 1);
     position: relative;
@@ -1537,39 +1616,40 @@ p {
     z-index: 1;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    .skills-container {
-        grid-template-columns: repeat(2, 1fr);
+@media (max-width: 768px) {
+    .skills-heading {
+        font-size: 2rem;
+    }
+
+    .skill-card {
+        padding: 1.5rem 2.5rem;
+
+    }
+
+    .skill-image {
+        width: 130px;
+        height: 130px;
+    }
+
+}
+
+@media (max-width: 600px) {
+        .skills-container {
+        grid-template-columns: repeat(1, 1fr);
         gap: 1.5rem;
     }
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+
 
     .skills-heading {
         font-size: 2.2rem;
     }
 
     .skill-card {
-      padding: 1.25rem; /* Reduced */
         max-width: 400px; /* Smaller max-width for mobile */
-    }
-}
-
-@media (max-width: 768px) {
-    .skills-container {
-        grid-template-columns: 1fr;
-    }
-
-    .skills-heading {
-        font-size: 2rem;
-    }
-
-    .skill-card {
-        padding: 1.5rem;
-    }
-
-    .skill-image {
-        width: 130px;
-        height: 130px;
     }
 }
 

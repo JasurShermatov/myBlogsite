@@ -3,177 +3,215 @@
 {% load widget_tweaks %}
 {% block title %}Home | Portfolio{% endblock %}
 
+
 {% block content %}
 
 
     <section class="about-preview-section">
-    <div class="container">
-        <!-- Static About Me Section -->
-        <div class="about-preview">
-            <div class="about-preview-content">
-                <img src="{% static 'images/me.jpeg' %}" alt="Profile Image" class="profile-image">
-                <h1 class="profile-name">Jasur Shermatov</h1>
-                <h3 class="profile-title">Software Engineer</h3>
-                <p class="profile-quote">Innovative and efficient solutions for challenging problems through coding and creativity.</p>
+        <div class="container">
+            <!-- Static About Me Section -->
+            <div class="about-preview">
+                <div class="about-preview-content">
+                    <img src="{% static 'images/me.jpeg' %}" alt="Profile Image" class="profile-image">
+                    <h1 class="profile-name">Jasur Shermatov</h1>
+                    <h3 class="profile-title">Software Engineer</h3>
+                    <p class="profile-quote">Innovative and efficient solutions for challenging problems through coding
+                        and creativity.</p>
                     <div class="icon-container">
-                    <a href="https://www.linkedin.com/in/jasur-shermatov-3507592a2/" class="icon-link" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                            <rect x="2" y="9" width="4" height="12"></rect>
-                            <circle cx="4" cy="4" r="2"></circle>
-                        </svg>
-                    </a>
-                    <a href="https://github.com/JasurShermatov" class="icon-link" aria-label="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
-                        </svg>
-                    </a>
-                    <a href="https://t.me/shernatov_jasur" class="icon-link" aria-label="Telegram">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M22 2L11 13"></path>
-                            <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
-                        </svg>
-                    </a>
-                    <a href="https://www.instagram.com/jasur_0528" class="icon-link" aria-label="Instagram">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
-                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
-                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
-                        </svg>
-                    </a>
-                </div>
+                        <a href="https://www.linkedin.com/in/jasur-shermatov-3507592a2/" class="icon-link"
+                           aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/JasurShermatov" class="icon-link" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </a>
+                        <a href="https://t.me/shernatov_jasur" class="icon-link" aria-label="Telegram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="M22 2L11 13"></path>
+                                <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/jasur_0528" class="icon-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+                    </div>
 
-            </div>
-        </div>
-
-    </div>
-
-
-
-</section>
-
-<section class="hero-section">
-    <div class="container">
-        <div class="hero-content">
-            <h1 class="section-heading">Explore My Creative Space</h1>
-            <p class="hero-text">Welcome to my portfolio – a space where you can explore my creative projects, discover innovative solutions, and gain insights into my professional journey.</p>
-            <div class="hero-buttons">
-                <a href="{% url 'portfolio' %}" class="btn-primary">View Portfolio</a>
-                <a href="{% url 'contact' %}" class="btn-outline">Contact Me</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-
-<section class="portfolio-preview-section">
-    <div class="container">
-        <h2 class="section-heading">Featured Projects</h2>
-        <div class="portfolio-preview-grid">
-            {% for portfolio in portfolios|slice:":6" %}
-            <div class="portfolio-item">
-                {% if portfolio.image %}
-                <img src="{{ portfolio.image.url }}" alt="{{ portfolio.title }}" class="portfolio-image">
-                {% endif %}
-                <div class="portfolio-overlay">
-                    <h3>{{ portfolio.title }}</h3>
-                    <p>{{ portfolio.text|truncatewords:10 }}</p>
-                    {% if portfolio.link %}
-                    <a href="{{ portfolio.link }}" class="btn-primary" target="_blank">View Project</a>
-                    {% endif %}
                 </div>
             </div>
-            {% empty %}
-            <p>No portfolio items available yet.</p>
-            {% endfor %}
-        </div>
-        <div class="portfolio-more">
-            <a href="{% url 'portfolio' %}" class="btn-outline">View All Projects</a>
-        </div>
-    </div>
-</section>
 
-<section class="blog-preview-section">
-    <div class="container">
-        <h2 class="section-heading">Latest Blog Posts</h2>
-        <div class="blog-preview-grid">
-            {% for post in posts %}
-            <div class="blog-card">
-                {% if post.image %}
-                <div class="blog-card-image">
-                    <img src="{{ post.image.url }}" alt="{{ post.title }}">
-                </div>
-                {% endif %}
-                <div class="blog-card-content">
-                    <h3>{{ post.title }}</h3>
-                    <p class="blog-date">{{ post.created_at|date:"F j, Y"}}</p>
-                    <p>{{ post.post|truncatewords:20|safe}}</p>
-                    <a href="{% url 'post' %}" class="read-more">Read More</a>
+        </div>
+
+
+    </section>
+
+    <section class="hero-section">
+        <div class="container">
+            <div class="hero-content">
+                <h1 class="section-heading">Explore My Creative Space</h1>
+                <p class="hero-text">Welcome to my portfolio – a space where you can explore my creative projects,
+                    discover innovative solutions, and gain insights into my professional journey.</p>
+                <div class="hero-buttons">
+                    <a href="{% url 'portfolio' %}" class="btn-primary">View Portfolio</a>
+                    <a href="{% url 'contact' %}" class="btn-outline">Contact Me</a>
                 </div>
             </div>
-            {% empty %}
-            <p>No blog posts available yet.</p>
-            {% endfor %}
         </div>
-        <div class="blog-more">
-            <a href="{% url 'post' %}" class="btn-outline">View All Posts</a>
+    </section>
+
+
+    <section class="portfolio-preview-section">
+        <div class="container">
+            <h2 class="section-heading">Featured Projects</h2>
+            <div class="portfolio-preview-grid">
+                {% for portfolio in portfolios|slice:":6" %}
+                    <div class="portfolio-item">
+                        {% if portfolio.image %}
+                            <img src="{{ portfolio.image.url }}" alt="{{ portfolio.title }}" class="portfolio-image">
+                        {% endif %}
+                        <div class="portfolio-overlay">
+                            <h3>{{ portfolio.title }}</h3>
+                            <p>{{ portfolio.text|truncatewords:10 }}</p>
+                            {% if portfolio.link %}
+                                <a href="{{ portfolio.link }}" class="btn-primary" target="_blank">View Project</a>
+                            {% endif %}
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p>No portfolio items available yet.</p>
+                {% endfor %}
+            </div>
+            <div class="portfolio-more">
+                <a href="{% url 'portfolio' %}" class="btn-outline">View All Projects</a>
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<section class="contact-section">
-    <div class="container">
-        <h2 class="section-heading">Get In Touch</h2>
-        <div class="contact-container">
-            <div  class="contact-info">
-                <h3>Contact Information</h3>
-                <p style="line-height: 34px" >Feel free to reach out if you have any questions or would like to work together.</p>
-                <ul style="line-height: 34px" class="contact-details">
-                    <li>Write to me at this form:</li>
-                    <li>Fullname: Mr John</li>
-                    <li>Email: exaple@portfolio.com</li>
-                    <li>Phone: +1234567890</li>
-                    <li>Message: I am writing about somthing...</li>
-                </ul>
+    <section class="blog-preview-section">
+        <div class="container">
+            <h2 class="section-heading">Latest Blog Posts</h2>
+            <div class="blog-preview-grid">
+                {% for post in posts %}
+                    <div class="blog-card">
+                        {% if post.image %}
+                            <div class="blog-card-image">
+                                <img src="{{ post.image.url }}" alt="{{ post.title }}">
+                            </div>
+                        {% endif %}
+                        <div class="blog-card-content">
+                            <h3>{{ post.title }}</h3>
+                            <p class="blog-date">{{ post.created_at|date:"F j, Y"}}</p>
+                            <p>{{ post.post|truncatewords:20|safe}}</p>
+                            <a href="{% url 'post' %}" class="read-more">Read More</a>
+                        </div>
+                    </div>
+                    {% empty %}
+                    <p>No blog posts available yet.</p>
+                {% endfor %}
+            </div>
+            <div class="blog-more">
+                <a href="{% url 'post' %}" class="btn-outline">View All Posts</a>
+            </div>
+        </div>
+    </section>
 
-                <div class="social-links">
+    <section class="contact-section">
+        <div class="container">
+            <h2 class="section-heading">Get In Touch</h2>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p style="line-height: 34px">Feel free to reach out if you have any questions or would like to work
+                        together.</p>
+                    <ul style="line-height: 34px" class="contact-details">
+                        <li>Write to me at this form:</li>
+                        <li>Fullname: Mr John</li>
+                        <li>Email: exaple@portfolio.com</li>
+                        <li>Phone: +1234567890</li>
+                        <li>Message: I am writing about somthing...</li>
+                    </ul>
 
-                    <a href="https://www.linkedin.com/in/jasur-shermatov-3507592a2/" class="social-link" aria-label="LinkedIn">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
-                    </a>
-                    <a href="https://github.com/JasurShermatov" class="social-link" aria-label="GitHub">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
-                    </a>
+                    <div class="social-links">
+
+                        <a href="https://www.linkedin.com/in/jasur-shermatov-3507592a2/" class="social-link"
+                           aria-label="LinkedIn">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                                <rect x="2" y="9" width="4" height="12"></rect>
+                                <circle cx="4" cy="4" r="2"></circle>
+                            </svg>
+                        </a>
+                        <a href="https://github.com/JasurShermatov" class="social-link" aria-label="GitHub">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                            </svg>
+                        </a>
                         <a href="https://t.me/shernatov_jasur" class="social-link" aria-label="Telegram">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2L11 13"></path><path d="M22 2L15 22L11 13L2 9L22 2Z"></path></svg>
-                    </a>
-                     <a href="https://www.instagram.com/jasur_0528" class="social-link" aria-label="Instagram">
-                           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-                      </a>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <path d="M22 2L11 13"></path>
+                                <path d="M22 2L15 22L11 13L2 9L22 2Z"></path>
+                            </svg>
+                        </a>
+                        <a href="https://www.instagram.com/jasur_0528" class="social-link" aria-label="Instagram">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"
+                                 fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                 stroke-linejoin="round">
+                                <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                                <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                            </svg>
+                        </a>
+
+                    </div>
+                </div>
+                <div class="contact-form-container">
+                    <h2>Send a Message</h2>
+                    <form method="post" class="contact-form">
+                        {% csrf_token %}
+                        <div class="form-group">
+                            <label for="{{ form.fullname.id_for_label }}">Full Name</label>
+                            {{ form.fullname|attr:"placeholder:Mr John" }}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.email.id_for_label }}">Email</label>
+                            {{ form.email|attr:"placeholder:john@example.com" }}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.phone.id_for_label }}">Phone</label>
+                            {{ form.phone|attr:"placeholder:+1234567890" }}
+                        </div>
+                        <div class="form-group">
+                            <label for="{{ form.description.id_for_label }}">Message</label>
+                            {{ form.description|attr:"placeholder:Write your message here..." }}
+                        </div>
+
+                        <button type="submit" class="btn-primary">Send Message</button>
 
                 </div>
             </div>
-            <div class="contact-form-container">
-                <form method="post" class="contact-form">
-                    {% csrf_token %}
-                    <div class="form-group">
-                        <label for="{{ form.fullname.id_for_label }}">Full Name</label>
-                        {{ form.fullname|attr:"placeholder:Mr John" }}
-                    </div>
-                    <div class="form-group">
-                        <label for="{{ form.email.id_for_label }}">Email</label>
-                        {{ form.email|attr:"placeholder:john@example.com" }}
-                    </div>
-                    <div class="form-group">
-                        <label for="{{ form.phone.id_for_label }}">Phone</label>
-                        {{ form.phone|attr:"placeholder:+1234567890" }}
-                    </div>
-                    <div class="form-group">
-                        <label for="{{ form.description.id_for_label }}">Message</label>
-                        {{ form.description|attr:"placeholder:Write your message here..." }}
-                    </div>
-            </div>
         </div>
-    </div>
-</section>
+    </section>
 {% endblock %}

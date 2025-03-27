@@ -33,7 +33,7 @@
                 <div class="about-text">
                     {% if about.experience %}
                     <div class="experience-content">
-                        <h2>My Experience</h2>
+                        <h2>My education</h2>
                         {{ about.experience|safe }}
                     </div>
                     {% endif %}
@@ -77,7 +77,7 @@
                             <div class="skill-info">
                                 <h3>{{ skill.title }}</h3>
                                 <p>{{ skill.percentage }}% Complete</p>
-                                <p>Experience since {{ skill.experience_since|date:"F Y" }}</p>
+                                <p>Experience since {{ skill.experience_since|date:"F Y"}}</p>
                                 <div class="progress-bar-container">
                                     <div class="progress-bar" data-value="{{ skill.percentage }}"></div>
                                 </div>
