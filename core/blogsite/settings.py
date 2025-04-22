@@ -109,18 +109,3 @@ if not DEBUG:
     SECURE_HSTS_SECONDS = 31536000  # 1 yil
     SECURE_HSTS_INCLUDE_SUBDOMAINS = True
     SECURE_HSTS_PRELOAD = True
-
-
-
-
-INSTALLED_APPS += ["csp"]
-
-MIDDLEWARE.insert(0, "csp.middleware.CSPMiddleware")
-
-CSP_DEFAULT_SRC = ("'self'",)
-CSP_STYLE_SRC = ("'self'", "fonts.googleapis.com")
-CSP_FONT_SRC = ("'self'", "fonts.gstatic.com")
-CSP_SCRIPT_SRC = ("'self'",)
-
-
-MIDDLEWARE.insert(1, "core.security.BlockSuspiciousUserAgentsMiddleware")
